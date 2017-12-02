@@ -3,10 +3,11 @@
 
 #ifdef __AVR
   #include <avr/pgmspace.h>
+  #include <util/delay.h>
 #elif defined(ESP8266)
+  #define _delay_ms(ms) delayMicroseconds((ms) * 1000)
   #include <pgmspace.h>
 #endif
-#include <util/delay.h>
 #include <stdlib.h>
 #include "max6675.h"
 
